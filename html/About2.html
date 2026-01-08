@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareLink - About Us</title>
+  <link rel="stylesheet" href="../CSS/style.css"/>
+  <link rel="stylesheet" href="../CSS/About.css"/>
+</head>
+<body>
+  <div class="signup-container">
+    <!-- Left Illustration -->
+    <div class="signup-left">
+      <img src="../IMAGES/logo1.png.png" alt="CareLink Logo" class="logo">
+      <img src="../IMAGES/nurse1.png.png" alt="Illustration" class="illustration">
+    </div>
+
+    <!-- Right Content -->
+    <div class="signup-right about-right">
+      <h1>About Us</h1>
+
+      <div class="about-cards">
+        <div class="card">
+          <h2>Who We Are</h2>
+          <p>We are a digital healthcare solution provider creating a secure online platform for patients and doctors to manage medical data efficiently.</p>
+        </div>
+        <div class="card">
+          <h2>Our Mission</h2>
+          <p>To simplify medical data management, ensure privacy, and improve healthcare delivery across Sri Lanka.</p>
+        </div>
+        <div class="card">
+          <h2>Our Vision</h2>
+          <p>To become the most trusted digital healthcare portal for patients, clinics, hospitals, and labs nationwide.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('Header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('Header-placeholder').innerHTML = data);
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+</body>
+</html>

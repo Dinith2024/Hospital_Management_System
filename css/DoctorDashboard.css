@@ -1,0 +1,322 @@
+/* Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 100px auto 50px;
+  gap: 25px;
+}
+
+/* Profile Sidebar */
+.profile-card {
+  flex: 1;
+  background: #f0e6f9;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.profile-card .profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.profile-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.profile-card p {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  color: #58105d;
+}
+
+/* Main Dashboard */
+.dashboard-main {
+  flex: 2;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: #e9e8e9;
+  cursor: pointer;
+  font-weight: 500;
+  color: #000;
+}
+
+.tab-btn.active {
+  background: #eb5fe7;
+  color: #fff;
+}
+
+/* Tab content */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #d3a6df;
+}
+
+th {
+  background: #f6e8f9;
+  color: #58105d;
+  font-weight: 600;
+}
+
+tr:hover td {
+  background: #f0e6f9;
+}
+
+/* Chart container */
+#hoursChart {
+  margin-top: 25px;
+}
+
+/* Stats Cards */
+.stats-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  flex: 1;
+  background: linear-gradient(135deg, #eb5fe7, #8b5cd6);
+  color: #fff;
+  padding: 20px 15px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Increase main section width */
+.dashboard-container {
+  max-width: 1400px;
+  margin: 120px auto 50px;
+  gap: 30px;
+}
+
+/* Make chart bigger */
+#hoursChart {
+  margin-top: 30px;
+  max-height: 300px;
+}
+
+/* Editable inputs only appear in form */
+.profile-card input[type="text"],
+.profile-card input[type="email"] {
+  width: 100%;
+  border: 1px solid #d3a6df;
+  border-radius: 8px;
+  padding: 5px 8px;
+  margin: 3px 0 8px;
+  font-size: 0.95rem;
+}
+
+.edit-profile-btn {
+  display: block;        /* makes the button a block element */
+  width: 70%;            /* set width to 70% */
+  margin: 10px auto;     /* center horizontally with auto left/right margin */
+  padding: 10px;
+  background: #eb5fe7;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.edit-profile-btn:hover {
+  background: #8b5cd6;
+}
+
+.profile-img-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Hover overlay */
+.profile-img-container::after {
+  content: "Choose Image";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(88, 16, 93, 0.8);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Hover overlay for choose image */
+.profile-img-container.profile-hover {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-img-container.profile-hover .choose-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 5px 0;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile-img-container.profile-hover:hover .choose-text {
+  opacity: 1;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.default-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #eb5fe7; /* nice purple color */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer; /* indicate clickable for upload */
+}
+
+.profile-card form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #58105d;
+}
+
+.profile-card form input,
+.profile-card form select {
+  width: 100%;
+  padding: 6px 8px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 1px solid #d3a6df;
+  font-size: 0.95rem;
+}
+
+.profile-card, .schedule-card {
+  min-height: 480px; /* set same min-height for all sidebar cards */
+}
+
+.dashboard-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 120px auto 50px;
+  gap: 30px;
+  align-items: flex-start; /* default is stretch; optional */
+}
+
+aside.profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* stretch content */
+}
+
+/* Modal styling */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 25px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  font-size: 1.1rem;
+  color: #58105d;
+}
+
+.close-btn {
+  color: #58105d;
+  float: right;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+

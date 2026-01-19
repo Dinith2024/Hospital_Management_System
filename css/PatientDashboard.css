@@ -1,0 +1,412 @@
+/* ----------------- Layout ----------------- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f0f8;
+    color: #030303;
+}
+
+main.dashboard-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 120px auto 50px;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* ----------------- Profile Card ----------------- */
+aside.profile-card {
+    background: #f0e6f9;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    min-height: 480px;
+    flex: 0 0 300px; /* fixed width */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    pointer-events: auto;
+}
+
+.profile-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #58105d;
+}
+
+.profile-card p {
+    font-size: 0.95rem;
+    margin: 6px 0;
+    color: #58105d;
+}
+
+.profile-card form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #58105d;
+}
+
+.profile-card form input,
+.profile-card form textarea,
+.profile-card form select {
+    width: 100%;
+    padding: 6px 8px;
+    margin-top: 4px;
+    border-radius: 8px;
+    border: 1px solid #d3a6df;
+    font-size: 0.95rem;
+}
+
+/* ----------------- Edit Profile Button ----------------- */
+.edit-profile-btn {
+    display: block;
+    width: 70%;
+    margin: 10px auto;
+    padding: 10px;
+    background: #eb5fe7;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+    text-align: center;
+}
+
+.edit-profile-btn:hover {
+    background: #8b5cd6;
+}
+
+#cancelEditBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* optional */
+}
+
+/* ----------------- Hidden ----------------- */
+.hidden {
+    display: none;
+}
+
+/* ----------------- Dashboard Main ----------------- */
+section.dashboard-main {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* ----------------- Tabs ----------------- */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background: #e9e8e9;
+    cursor: pointer;
+    font-weight: 500;
+    color: #000;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tab-btn.active {
+    background: #eb5fe7;
+    color: #fff;
+	font-weight: bold;
+}
+
+/* ----------------- Tab Content ----------------- */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ----------------- Tables ----------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #d3a6df;
+}
+
+th {
+    background: #f6e8f9;
+    color: #58105d;
+    font-weight: 600;
+}
+
+tr:hover td {
+    background: #f0e6f9;
+}
+
+/* ----------------- Profile Image ----------------- */
+.profile-img-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.default-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #eb5fe7;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hover overlay */
+.profile-img-container::after {
+    content: "Choose Image";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(88, 16, 93, 0.8);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.profile-img-container.profile-hover:hover::after {
+    opacity: 1;
+}
+
+/* ----------------- Misc ----------------- */
+.dashboard-container {
+    gap: 20px;
+}
+
+.stats-cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    flex: 1;
+    background: linear-gradient(135deg, #eb5fe7, #8b5cd6);
+    color: #fff;
+    padding: 20px 15px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px 35px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #581845;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+/* Stepper Style */
+.appointment-step {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 12px;
+    background: #e9e8e9;
+    color: #58105d;
+    font-weight: 600;
+    transition: all 0.3s;
+    cursor: default;
+}
+
+.step.active {
+    background: linear-gradient(135deg, #eb5fe7, #8b5cd6);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(139, 92, 214, 0.4);
+}
+
+/* Form Card */
+#bookAppointmentForm {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Labels & Inputs */
+#bookAppointmentForm label {
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+#bookAppointmentForm select,
+#bookAppointmentForm input[type="date"] {
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #d3a6df;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+#bookAppointmentForm select:focus,
+#bookAppointmentForm input[type="date"]:focus {
+    border-color: #8b5cd6;
+    box-shadow: 0 0 10px rgba(139, 92, 214, 0.3);
+}
+
+/* Slots Modern Grid */
+#slotsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Slot Buttons */
+.slot-btn {
+    padding: 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.slot-available {
+    background: linear-gradient(135deg, #28a745, #198754);
+    color: #fff;
+    cursor: pointer;
+}
+
+.slot-available:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(139, 92, 214, 0.4);
+}
+
+.slot-booked {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.selected-slot {
+    background: #ffd700 !important;
+    color: #000 !important;
+    box-shadow: 0 4px 12px rgba(255,215,0,0.4);
+}
+
+/* Submit Button */
+#bookAppointmentForm button[type="submit"] {
+    padding: 14px 0;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #eb5fe7, #8b5cd6);
+    color: #000;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+#bookAppointmentForm button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 214, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #slotsContainer {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+    #bookAppointmentForm {
+        padding: 20px;
+    }
+}

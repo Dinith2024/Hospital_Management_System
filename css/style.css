@@ -1,0 +1,228 @@
+/* General Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #d3a6df, #f6e8f9);
+  color: #030303;
+  overflow: hidden;
+}
+
+h1, h2, h3 {
+  color: #58105d;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #58105d;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Containers */
+.login-container, .signup-container {
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1), 
+              0 0 30px rgba(219, 91, 220, 0.15);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.login-container:hover, .signup-container:hover {
+  transform: scale(1.02);
+}
+
+
+/* Left side */
+.login-left, .signup-left {
+  flex: 1;
+  background: #f0e6f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-left img, .signup-left img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+/* Right side */
+.login-right, .signup-right {
+  flex: 1;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 0 25px 25px 0;
+  overflow-y: auto;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+}
+
+.login-right h1, .signup-right h1 {
+  color: #58105d;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #da5bdc;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 265px;           /* fixed width */
+  height: auto;           /* maintain aspect ratio */
+  margin-bottom: 20px;    /* keep existing spacing */
+  display: block;
+}
+
+.login-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Forms */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select {
+  padding: 14px;
+  border-radius: 15px;
+  border: 1px solid #c7b3ec;
+  font-size: 1rem;
+  outline: none;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: #eb5fe7;
+  box-shadow: 0 0 10px rgba(235, 95, 231, 0.4);
+  background: #fff;
+}
+
+
+.btn {
+  margin-top: 15px;
+  padding: 14px;
+  background: linear-gradient(135deg, #eb5fe7, #8b5cd6);
+  border: none;
+  border-radius: 15px;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(235, 95, 231, 0.35);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 12px 12px 0 0;
+  background: #e9e8e9;
+  cursor: pointer;
+  font-weight: 500;
+  color: #000000;
+}
+
+.tab-btn.active {
+  background: #eb5fe7;
+  color: #000000;
+}
+
+.tab-btn:hover:not(.active) {
+  background: #e5e7eb;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.switch-text {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.switch-text a {
+  color: #8b5cd6;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.switch-text a:hover {
+  color: #eb5fe7;
+}
+
+.forgot-link {
+  font-size: 13px;
+  margin: 5px 0;
+  text-align: right;
+  color: #8b5cd6;
+  display: block;
+  transition: 0.2s;
+}
+
+.forgot-link:hover {
+  color: #eb5fe7;
+}
+
+/* Style dropdowns to match inputs */
+select {
+  padding: 9px;
+  border: 1px solid #c7b3ec;
+  border-radius: 12px;
+  outline: none;
+  transition: border 0.3s;
+  width: 100%;           /* make it full width like other inputs */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;       /* same as input text */
+}
+
+select:focus {
+  border-color: #8b5cd6;
+}
